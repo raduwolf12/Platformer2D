@@ -34,7 +34,7 @@ namespace Platformer.Mechanics
         public Health health;
         public bool controlEnabled = true;
 
-        bool jump;
+        public bool jump;
         Vector2 move;
         SpriteRenderer spriteRenderer;
         internal Animator animator;
@@ -122,6 +122,7 @@ namespace Platformer.Mechanics
                 spriteRenderer.flipX = false;
             else if (move.x < -0.01f)
                 spriteRenderer.flipX = true;
+            
 
             animator.SetBool("grounded", IsGrounded);
             animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
