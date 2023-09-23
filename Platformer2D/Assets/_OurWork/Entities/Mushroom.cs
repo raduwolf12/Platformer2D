@@ -9,27 +9,30 @@ public class Mushroom : MonoBehaviour
 {
     //Has a jump modifier for the player
     readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
-
+    public bool enable = true;
     public float jumpBoost = 10f;
-
+ 
     void OnTriggerStay2D(Collider2D other)
     {
         PlayerController player = other.GetComponent<PlayerController>();
-        if (player != null && !player.IsGrounded)
+        if(enable)
         {
-            if (player.jumpState == PlayerController.JumpState.Grounded) //This is done to play jump sound
+            if (player != null && !player.IsGrounded)
             {
-                player.jumpState = PlayerController.JumpState.PrepareToJump;
+                if (player.jumpState == PlayerController.JumpState.Grounded) //This is done to play jump sound
+                {
+                    player.jumpState = PlayerController.JumpState.PrepareToJump;
+                }
+                player.jump = false;
+                player.velocity.y = jumpBoost * model.jumpModifier;
             }
-            player.jump = false;
-            player.velocity.y = jumpBoost * model.jumpModifier;
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         PlayerController player = other.GetComponent<PlayerController>();
-        if (!player.IsGrounded)
+        if (player != null && !player.IsGrounded)
         {
             //Play bouncing sound or something
         }
