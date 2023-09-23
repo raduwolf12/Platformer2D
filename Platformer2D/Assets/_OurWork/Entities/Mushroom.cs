@@ -9,14 +9,14 @@ public class Mushroom : MonoBehaviour
 {
     //Has a jump modifier for the player
     readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
-    public bool enable = true;
-    public float jumpBoost = 10f;
- 
+    public float jumpBoost = 8f;
+
     void OnTriggerStay2D(Collider2D other)
     {
-        PlayerController player = other.GetComponent<PlayerController>();
-        if(enable)
+        if (this.enabled)
         {
+            PlayerController player = other.GetComponent<PlayerController>();
+
             if (player != null && !player.IsGrounded)
             {
                 if (player.jumpState == PlayerController.JumpState.Grounded) //This is done to play jump sound
@@ -31,10 +31,13 @@ public class Mushroom : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        PlayerController player = other.GetComponent<PlayerController>();
-        if (player != null && !player.IsGrounded)
+        if (this.enabled)
         {
-            //Play bouncing sound or something
+            PlayerController player = other.GetComponent<PlayerController>();
+            if (player != null && !player.IsGrounded)
+            {
+                //Play bouncing sound or something
+            }
         }
     }
 }

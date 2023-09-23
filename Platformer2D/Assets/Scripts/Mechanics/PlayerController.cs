@@ -39,6 +39,7 @@ namespace Platformer.Mechanics
         SpriteRenderer spriteRenderer;
         internal Animator animator;
         readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+        private Transform FlipableChild;
 
         public Bounds Bounds => collider2d.bounds;
 
@@ -49,6 +50,7 @@ namespace Platformer.Mechanics
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
+            FlipableChild = transform.GetChild(0);
         }
 
         protected override void Update()
@@ -119,9 +121,16 @@ namespace Platformer.Mechanics
             }
 
             if (move.x > 0.01f)
+            {
                 spriteRenderer.flipX = false;
+                FlipableChild.localScale = Vector3.one;
+            }
             else if (move.x < -0.01f)
+            {
                 spriteRenderer.flipX = true;
+                FlipableChild.localScale = new Vector3(-1, 1, 1);
+            }
+                
             
 
             animator.SetBool("grounded", IsGrounded);
