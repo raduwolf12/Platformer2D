@@ -36,7 +36,7 @@ public class Mushroom : MonoBehaviour
             PlayerController player = other.GetComponent<PlayerController>();
             if (player != null && !player.IsGrounded)
             {
-                //Play bouncing sound or something
+                this.GetComponent<AudioSource>().Play();
             }
         }
     }

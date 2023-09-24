@@ -19,6 +19,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3812129246249714453, guid: b2fe18d93f1a6094bbe24f8327ed0194,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.1810168
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812129246249714453, guid: b2fe18d93f1a6094bbe24f8327ed0194,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5886033
+      objectReference: {fileID: 0}
     - target: {fileID: 3856285680614692783, guid: b2fe18d93f1a6094bbe24f8327ed0194,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -78,6 +88,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884916000092533981, guid: b2fe18d93f1a6094bbe24f8327ed0194,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.7431297
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884916000092533981, guid: b2fe18d93f1a6094bbe24f8327ed0194,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.6292505
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884916000092533981, guid: b2fe18d93f1a6094bbe24f8327ed0194,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.016560793
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884916000092533981, guid: b2fe18d93f1a6094bbe24f8327ed0194,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.13740063
       objectReference: {fileID: 0}
     - target: {fileID: 6884916000092533981, guid: b2fe18d93f1a6094bbe24f8327ed0194,
         type: 3}
