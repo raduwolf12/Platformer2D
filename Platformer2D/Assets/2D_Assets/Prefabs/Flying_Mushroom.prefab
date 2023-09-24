@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56618406410771c4c9e8035a759d01d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpBoost: 8
+  jumpBoost: 11
 --- !u!82 &1543661811571903978
 AudioSource:
   m_ObjectHideFlags: 0
